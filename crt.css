@@ -1,0 +1,118 @@
+:root {
+    --amber: #ff9f1a;
+    --bg: #050200;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", monospace;
+}
+
+/* BODY */
+body {
+    background: black;
+    height: 100vh;
+}
+
+/* CRT WRAPPER */
+.crt {
+    color: var(--amber);
+    background: radial-gradient(circle at center, #120800 0%, #050200 70%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-shadow:
+        0 0 5px rgba(255, 159, 26, 0.6),
+        0 0 15px rgba(255, 159, 26, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* SCANLINES */
+.crt::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,159,26,0.03),
+        rgba(255,159,26,0.03) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events: none;
+}
+
+/* TOP NAV */
+.nav-top {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--amber);
+}
+
+/* LAYOUT */
+.layout {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+
+/* SIDE PANEL */
+.side-panel {
+    width: 220px;
+    border-right: 1px solid var(--amber);
+    padding: 20px;
+}
+
+.side-panel ul {
+    list-style: none;
+}
+
+.side-panel li {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+.content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* BOTTOM NAV */
+.nav-bottom {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid var(--amber);
+}
+
+.nav-bottom button {
+    background: transparent;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-shadow: inherit;
+}
+
+.nav-bottom button:active {
+    box-shadow: 0 0 15px rgba(255,159,26,0.8);
+}
+
+/* FOOTER */
+.footer {
+    height: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
