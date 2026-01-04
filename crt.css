@@ -79,6 +79,16 @@ body {
     cursor: pointer;
 }
 
+/* Hover effect for links in the side panel */
+.side-panel ul li {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.side-panel ul li:hover {
+    color: #00ff00; /* Bright green light effect */
+    text-shadow: 0 0 8px #00ff00;
+}
+
 /* MAIN CONTENT */
 .content {
     flex: 1;
@@ -103,10 +113,16 @@ body {
     font-size: 1.1rem;
     cursor: pointer;
     text-shadow: inherit;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-bottom button:active {
     box-shadow: 0 0 15px rgba(255,159,26,0.8);
+}
+
+.nav-bottom button:hover {
+    background-color: #00ff00; /* Bright green light effect */
+    box-shadow: 0 0 12px #00ff00;
 }
 
 /* FOOTER */
